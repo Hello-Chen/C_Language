@@ -7,7 +7,7 @@ int main(void)
     char str1[100];
     printf("%ld\n",sizeof(str));
     printf("%lu\n",strlen(str));
-    printf("%s\n",str);
+    printf("%s\n",str1);
 
     strcpy(str1,str);
     printf("%s %s\n",str,str1);
