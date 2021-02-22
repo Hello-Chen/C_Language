@@ -5,7 +5,7 @@ int main()
     printf("请输入100以内的分数：");
     scanf("%d", &a);
 
-    if (a > 100)
+    if (a > 100 || a < 0)
         printf("请输入100以内的数！");
     else if (a >= 90 && a <= 100)
         b = 1;

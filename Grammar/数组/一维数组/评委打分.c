@@ -7,6 +7,7 @@ int main(void)
     float sum = 0.0, avg = 0.0;
 
     // 输入5个数
+    printf("请输入5个数进行打分！（去掉最高最低分取平均值）\n");
     for (int i = 0; i < lenth; i++)
     {
         scanf("%f", &arr[i]);
