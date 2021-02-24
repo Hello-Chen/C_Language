@@ -1,27 +1,22 @@
 #include <stdio.h>
+#include "cJSON.h"
 
 int main(void)
 {
-    int arr[] = {1, 2, 505, 6, 4};
-    int *p = arr;
+    FILE *fp = NULL;
+    char buff[255];
 
-    for (int i = 0; i < 5 - 1; i++) // 比较的轮数
-    {
-        for (int j = 0; j < 5 - 1 - i; j++) // 每一轮比较的次数，且都需要减1
-        {
-            if (*(p + j) > *(p + j + 1)) // 交换数据
-            {
-                int temp = *(p + j);
-                *(p + j) = *(p + j + 1);
-                *(p + j + 1) = temp;
-            }
-        }
-    }
+    fp = fopen("./1.json", "r");
 
-    for (int i = 0; i < 5; i++)
-    {
-        printf("%d ", *(p + i));
-    }
+    fgets(buff, 255, (FILE *)fp);
+    cJSON *json = cJSON_Parse(buff);
+    char *json_data = NULL;
+    // printf("%s\n",json_data = cJSON_Print(json));
+    puts(json_data = cJSON_Print(buff));
+
+    free(json_data);
+    //将JSON结构所占用的数据空间释放
+    cJSON_Delete(json);
 
     return 0;
 }
