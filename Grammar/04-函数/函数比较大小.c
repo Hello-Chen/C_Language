@@ -20,10 +20,7 @@ int comparison_of_size(int a, int b)
 {
     int min;
 
-    if (a > b)
-        min = b;
-    else
-        min = a;
+    (a > b) ? (min = b) : (min = a);
 
     return min;
 }
