@@ -10,6 +10,5 @@ int main(void)
         if (*(p1 + i) == *(p2 + i))
             printf("%c", *(p1 + i));
     }
-    sadsa
     return 0;
 }
