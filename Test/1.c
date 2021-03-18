@@ -1,22 +1,16 @@
 #include <stdio.h>
-#include <string.h>
+#include <time.h>
 
-int main(void)
+typedef struct tm TM;
+
+int main(int argc, char const *argv[])
 {
-    struct Book
-    {
-        int num;
-        char name[20];
-        float price;
-    } a[3] = {{1, "asd", 12.2}, {2, "qwe", 65.2}, {3, "fdg", 88.2}};
-
-    struct Book b={4,"sadada",56.4};
-
-    for (int i = 0; i < sizeof(a) / sizeof(a[0]); i++)
-    {
-        printf("%d\n%s\n%.2f\n", a[i].num,a[i].name,a[i].price);
-    }
-    printf("%d",b.num);
-
+    char *wday[] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+    time_t timep;
+    struct tm *p;
+    time(&timep);
+    p = gmtime(&timep);
+    printf("%d %d %d", (1900 + p->tm_year), (1 + p->tm_mon), p->tm_mday);
+    printf(" %s %d:%d:%d\n", wday[p->tm_wday], p->tm_hour, p->tm_min, p->tm_sec);
     return 0;
 }
