@@ -1,3 +1,9 @@
+/**
+* Author:   hellochen
+* DateTime: 2021.03.22-18:18:30
+* Description: 编写程序,实现矩阵(行、3列的转置(即行列互换)。
+*/
+
 #include <stdio.h>
 #define N 3
 

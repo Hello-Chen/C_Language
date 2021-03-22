@@ -1,3 +1,9 @@
+/**
+* Author:   hellochen
+* DateTime: 2021.03.22-18:15:01
+* Description: 下列程序定义了NxN的二维数组,并在主函数中自动赋值。该函数的功能是使数组右上半三角元素中的值乘以m。
+*/
+
 #include <stdio.h>
 #define N 3
 
@@ -20,7 +26,7 @@ int main(void)
     {
         for (i = 0; i <= j; i++)
         {
-            a[i][j] *= 2;
+            a[i][j] *= 2;               // 满足条件的元素每一个乘以2
             printf("%-2d ", a[i][j]);
         }
         printf("\n");

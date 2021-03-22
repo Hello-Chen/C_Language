@@ -1,3 +1,9 @@
+/**
+* Author:   hellochen
+* DateTime: 2021.03.22-18:16:00
+* Description: 请编写函数fun,函数的功能是:求出数组周边元素的平均值并作为函数值返回给主函数中的s
+*/
+
 #include <stdio.h>
 #define N 3
 double fun(int a[][N]);
