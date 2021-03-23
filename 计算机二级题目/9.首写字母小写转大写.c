@@ -1,7 +1,7 @@
 /**
 * Author:   hellochen
 * DateTime: 2021.03.22-18:20:16
-* Description: 编写函数实现字符串中手写字母小写变为大写
+* Description: 编写函数实现字符串中首写字母小写变为大写
 */
 
 #include <stdio.h>
@@ -12,12 +12,11 @@ int main(void)
     fgets(str, 128, stdin);
 
     int flag = 0;
-    for (; *p; p++)
+    for (; *p; p++) // 遍历字符串
     {
         if (flag)
         {
             if (*p == ' ')
-
                 flag = 0;
         }
         else

@@ -1,5 +1,31 @@
-/**
-* Author:   hellochen
-* DateTime: 2021.03.22-17:55:44
-* Description: 
-*/
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    char ch[255];
+    FILE *fp = NULL;
+
+    if ((fp = fopen("./1.txt", "r+")) == NULL)
+    {
+        puts("error");
+        exit(0);
+    }
+
+    for (int i = 1; i <= 9; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            fprintf(fp, "%d*%d=%d\t", j, i, i * j);
+        }
+        fprintf(fp, "\n");
+    }
+
+    while (fgets(ch, 255, fp) != NULL)
+    {
+        printf("%s", ch);
+    }
+
+    fclose(fp);
+    return 0;
+}
