@@ -21,10 +21,10 @@ int main(void)
         fprintf(fp, "\n");
     }
 
-    while (fgets(ch, 255, fp) != NULL)
+   /*  while (fgets(ch, 255, fp) != NULL)
     {
         printf("%s", ch);
-    }
+    } */
 
     fclose(fp);
     return 0;
