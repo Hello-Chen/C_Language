@@ -26,7 +26,7 @@ int main(void)
     {
         for (int j = i + 1; j < N; j++)
         {
-            int temp = a[i][j];
+            int temp = a[i][j]; // 行列互换
             a[i][j] = a[j][i];
             a[j][i] = temp;
         }
