@@ -23,6 +23,7 @@ int main(void)
     fun(s, t, &k);
 
     printf("%d\n", s[k]);
+
     return 0;
 }
 
@@ -31,7 +32,7 @@ int fun(int *s, int t, int *k)
     *k = 0;
     for (int i = 0; i < t; i++)
     {
-        if (s[*k] < s[i])
+        if (s[i] > s[*k])
             *k = i; // 让最大元素的下标赋值给k
     }
 
