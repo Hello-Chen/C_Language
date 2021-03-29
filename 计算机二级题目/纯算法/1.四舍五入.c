@@ -10,7 +10,7 @@ double fun(double h);
 int main(void)
 {
     double a = 123.452;
-    printf("%f", fun(a));
+    printf("%f\n", fun(a));
     return 0;
 }
 
