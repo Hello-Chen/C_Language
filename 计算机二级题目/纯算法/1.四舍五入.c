@@ -6,7 +6,9 @@
 */
 
 #include <stdio.h>
+
 double fun(double h);
+
 int main(void)
 {
     double a = 123.452;
