@@ -60,8 +60,8 @@ Link *initLinkListH()
 
         //将temp节点与新建立的a节点建立逻辑关系
         temp->next = a;
-        //指针temp每次都指向新链表的最后一个节点，其实就是 a节点，这里写temp=a也对
-        temp = temp->next;
+        //指针temp每次都指向新链表的最后一个节点，其实就是 a节点，这里写temp=a也对,表尾是a，让temp=a就把新表尾重新覆盖原表尾了
+        temp = temp->next; // temp=a;
     }
     return p;
 }
@@ -82,7 +82,7 @@ Link *insertLinkList(Link *p, int elem, int addIndex)
     Link *temp = p;
     for (int i = 1; i < addIndex; i++)
     {
-        temp = temp->next;
+        temp = temp->next;  // 找到addIndex所在的前驱节点
         if (temp == NULL)
         {
             printf("insert error!\n");
