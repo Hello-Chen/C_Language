@@ -30,9 +30,11 @@ int main(void)
     updateDoublyList(list, 1, 999);
     showDoublyList(list);
 
+    free(list);
     return 0;
 }
 
+/* initDoublyList */
 DoublyList *initDoublyList()
 {
     DoublyList *list = (DoublyList *)malloc(sizeof(DoublyList));
@@ -55,6 +57,7 @@ DoublyList *initDoublyList()
     return list;
 }
 
+/* showDoublyList */
 void showDoublyList(DoublyList *list)
 {
     DoublyList *temp = list;
@@ -66,6 +69,7 @@ void showDoublyList(DoublyList *list)
     printf("NULL\n");
 }
 
+/* insertDoublyList */
 DoublyList *insertDoublyList(DoublyList *list, int addIndex, int elem)
 {
     /* TODO: 插入问题 */
@@ -93,6 +97,7 @@ DoublyList *insertDoublyList(DoublyList *list, int addIndex, int elem)
     return list;
 }
 
+/* deleteDoublyList */
 DoublyList *deleteDoublyList(DoublyList *list, int delElem)
 {
     DoublyList *temp = list;
@@ -112,6 +117,7 @@ DoublyList *deleteDoublyList(DoublyList *list, int delElem)
     return list;
 }
 
+/* selectDoublyList */
 int selectDoublyList(DoublyList *list, int elem)
 {
     DoublyList *temp = list;
@@ -129,6 +135,7 @@ int selectDoublyList(DoublyList *list, int elem)
     return -1;
 }
 
+/* updateDoublyList */
 DoublyList *updateDoublyList(DoublyList *list, int updateElem, int elem)
 {
     DoublyList *temp = list;

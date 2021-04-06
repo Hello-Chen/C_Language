@@ -8,8 +8,9 @@
 
 typedef struct doublyList
 {
-    int data;
-    struct doublyList *prev, *next; // 定义前趋指针，后趋指针
+    int data;                // 数据域
+    struct doublyList *prev; // 前趋指针
+    struct doublyList *next; // 后趋指针
 } DoublyList;
 
 DoublyList *initDoublyList();

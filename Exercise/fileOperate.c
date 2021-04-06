@@ -5,8 +5,9 @@ int main(void)
 {
     char ch[255];
     FILE *fp = NULL;
-
-    if ((fp = fopen("./1.txt", "r+")) == NULL)
+    fp = fopen("./1.txt", "r+");
+    
+    if (fp == NULL)
     {
         puts("error");
         exit(0);
@@ -21,7 +22,7 @@ int main(void)
         fprintf(fp, "\n");
     }
 
-   /*  while (fgets(ch, 255, fp) != NULL)
+    /*  while (fgets(ch, 255, fp) != NULL)
     {
         printf("%s", ch);
     } */
