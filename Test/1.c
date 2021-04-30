@@ -1,50 +1,59 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-typedef struct linkStack
+#define MANLEN 6
+
+typedef struct
 {
-    int data;
-    struct linkStack *next;
-} LinkStack;
+    char ch[MANLEN];
+    int len;
+} String;
 
-void push(LinkStack *stack, int elem);
-void showLinkStack(LinkStack *stack);
-LinkStack *initLinkStack();
+String strCat(String *s, String *t);
 
 int main(void)
 {
-    LinkStack *stack = initLinkStack();
-    push(stack, 10);
-    push(stack, 20);
-    push(stack, 200);
+    String str1, str2;
+    strcpy(str1.ch, "abcd");
+    str1.len = strlen(str1.ch);
+    strcpy(str2.ch, "efg");
+    str2.len = strlen(str2.ch);
 
-    showLinkStack(stack);
+    printf("%s", str1.ch);
+    printf("%s\n", str2.ch);
+
+    String str3;
+    str3 = strCat(&str1, &str2);
+    printf("%s\n", str3.ch);
+    printf("%d", str3.len);
 
     return 0;
 }
 
-LinkStack *initLinkStack()
+String strCat(String *s, String *t)
 {
-    LinkStack *top = (LinkStack *)malloc(sizeof(LinkStack));
-    top->next = NULL;
-
-    return top;
-}
-
-void push(LinkStack *stack, int elem)
-{
-    LinkStack *top = (LinkStack *)malloc(sizeof(LinkStack));
-    top->data = elem;
-    stack->next = top;
-    top = stack;
-}
-
-void showLinkStack(LinkStack *stack)
-{
-    while (stack->next != NULL)
+    if (s->len + t->len <= MANLEN)
     {
-        stack = stack->next;
-        printf("%d", stack->data);
+        int i=0;
+        for (i = s->len; i < s->len + t->len; i++)
+        {
+            s->ch[i] = t->ch[i - s->len];
+        }
+        s->ch[i]='\0';
+        s->len += t->len;
+        return *s;
     }
-    printf("\n");
+    else if (s->len < MANLEN)
+    {
+        int j=0;
+        for (j = s->len; j < MANLEN; j++)
+        {
+            s->ch[j] = t->ch[j - s->len];
+        }
+        s->ch[j]='\0';
+        s->len = MANLEN;
+        return *s;
+    }
+    else
+        return *s;
 }
