@@ -16,5 +16,5 @@ int main(void)
 	a.title = 1;
 	a.price = 1.0;
 
-	std::cout << "asdasd:"<<a.title << std::endl;
+	std::cout << "asdasd:" << a.title << std::endl;
 }

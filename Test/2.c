@@ -1,14 +1,14 @@
 #include <stdio.h>
+#include "/home/hellochen/Documents/C_Language/lib/Hello_C.h"
 
 int main(void)
 {
-    int a=12346;
-    double b=123.456;
-    printf("%d\n",a);
-    printf("%4d\n",a);
-    printf("%f\n",b);
-    printf("%.2f\n",b);
-    printf("%4.2f\n",b);
-    printf("%-4.2f\n",b);
+    int arr[][3] = {{1, 2, 3},
+                    {4, 5, 3},
+                    {3, 3, 3}};
+    int **p = &arr[0][0];
+
+    printf("%d\n", *(*(p + 1) + 1));
+
     return 0;
 }
