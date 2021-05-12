@@ -1,7 +1,7 @@
 /**
 * Author:   hellochen
 * DateTime: 2021.03.22-18:08:09
-* Description: 请编写程序：从键盘输入一个字符串，将其中的小写字母全部转换成大写字* 母，输出到磁盘文件“upper.txt”中保存。输入的字符串以“!”结束。
+* Description: 请编写程序：从键盘输入一个字符串，将其中的小写字母全部转换成大写* 字母，输出到磁盘文件“upper.txt”中保存。输入的字符串以“!”结束。
 * 然后再将文upper.txt中的内容读出显示在屏幕上。
 */
 
@@ -29,7 +29,7 @@ int main(void)
     fp = fopen("./upper.txt", "w+"); // 打开一个文件，允许读写
 
     fputs(str, fp);
-    rewind(fp);     // 指针从文件结束符EOF重新指向文件开始
+    rewind(fp); // 指针从文件结束符EOF重新指向文件开始
     fgets(str, 255, fp);
     puts(str);
 
