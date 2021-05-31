@@ -11,7 +11,7 @@ int main(void)
     int count = 0;
     for (int i = 1; i <= 200; ++i)
     {
-        if (i % 10 == 3 || i / 10 % 10 == 3)
+        if (i % 10 == 3 || i / 10 % 10 == 3||i/3==0)
         {
             printf("%d ", i);
             count += i;

@@ -82,7 +82,7 @@ Link *insertLinkList(Link *p, int elem, int addIndex)
     Link *temp = p;
     for (int i = 1; i < addIndex; i++)
     {
-        temp = temp->next;  // 找到addIndex所在的前驱节点
+        temp = temp->next; // 找到addIndex所在的前驱节点
         if (temp == NULL)
         {
             printf("insert error!\n");
